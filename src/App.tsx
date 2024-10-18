@@ -23,8 +23,8 @@ function App() {
 
   return (
     <main>
-      <h1> My personal web</h1>
-      <!--
+
+      {/*
       <h1>My todos</h1>
       <button onClick={createTodo}>+ new</button>
       <ul>
@@ -40,7 +40,8 @@ function App() {
         <a href="https://docs.amplify.aws/react/start/quickstart/#make-frontend-updates">
           Review next step of this tutorial.
         </a>
-      </div> -->
+      </div>
+      */}
     </main>
   );
 }
