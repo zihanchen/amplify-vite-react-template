@@ -4,7 +4,7 @@
 
 function IntroTabs() {
 
-  function openCity(evt, cityName) {
+  function openTab(evt, tabName) {
     // Declare all variables
     var i, tabcontent, tablinks;
 
@@ -20,7 +20,7 @@ function IntroTabs() {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
     // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(cityName)!.style.display = "block";
+    document.getElementById(tabName)!.style.display = "block";
     evt.currentTarget.className += " active";
   }
 
@@ -28,12 +28,12 @@ function IntroTabs() {
     <main>
       <h1> Zihan Chen </h1>
       <div className="tab">
-        <button className="tablinks" onClick={() => openCity(event, 'Experience')}>Experience</button>
-        <button className="tablinks" onClick={() => openCity(event, 'Education')}>Education</button>
-        <button className="tablinks" onClick={() => openCity(event, 'Research')}>Research</button>
+        <button className="tablinks" onClick={() => openTab(event, 'Experience')}>Experience</button>
+        <button className="tablinks" onClick={() => openTab(event, 'Education')}>Education</button>
+        <button className="tablinks" onClick={() => openTab(event, 'Research')}>Research</button>
       </div>
 
-      <div id="Experience" className="tabcontent">
+      <div id="Experience" className="tabcontent" style={{display: "block"}}>
         <h1>Amazon</h1>
         <h4>2022, Sep - 2024, June</h4>
         <h3>Software Engineer</h3>
@@ -64,7 +64,7 @@ function IntroTabs() {
 
       </div>
 
-      <div id="Education" className="tabcontent">
+      <div id="Education" className="tabcontent" style={{display: "none"}}>
         <h1>University of Waterloo</h1>
         <h4>2019, June - 2021, Dec</h4>
         <p>Master of Mathematics - Computer Science</p>
@@ -93,7 +93,7 @@ function IntroTabs() {
         <p>CO 487 - Applied Cryptography</p>
       </div>
 
-      <div id="Research" className="tabcontent">
+      <div id="Research" className="tabcontent" style={{display: "none"}}>
         <h1>Polite Wifi Sensing</h1>
         <h4>2020, May - 2021, Sep</h4>
         <p>Discover that private wifi network where IoT devices inside will respond to potentially malicious attacker </p>
