@@ -5,8 +5,22 @@
 import { Flex, Divider, Heading, View } from "@aws-amplify/ui-react";
 import '@aws-amplify/ui-react/styles.css';
 import NavBarHeader from "./ui-components/NavBarHeader";
+import { useEffect, useState } from "react";
+import axios from 'axios';
 
 function IntroTabs() {
+  const api_url = "https://082q4pe6xa.execute-api.us-east-2.amazonaws.com/Test"
+  const [data, setData] = useState('');
+  useEffect(() => {
+    axios.get(api_url + "/data")
+        .then(response => {
+            console.log(response);
+            setData(response.data.body);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+  }, []);
 
   return (
     <main>
@@ -58,7 +72,7 @@ function IntroTabs() {
 
         </View>
 
-        <div id="Education" className="tabcontent" style={{display: "none"}}>
+        <View id="Education" className="tabcontent" style={{display: "none"}}>
           <h1>University of Waterloo</h1>
           <h4>2019, June - 2021, Dec</h4>
           <p>Master of Mathematics - Computer Science</p>
@@ -84,8 +98,8 @@ function IntroTabs() {
           <p>CS 456 - Computer Networks</p>
           <p>CS 486 - Introduction to Artificial Intelligence</p>
           <p>CO 487 - Applied Cryptography</p>
-        </div>
-        <div id="Research" className="tabcontent" style={{display: "none"}}>
+        </View>
+        <View id="Research" className="tabcontent" style={{display: "none"}}>
           <h1>Polite Wifi Sensing</h1>
           <h4>2020, May - 2021, Sep</h4>
           <p>Discover that private wifi network where IoT devices inside will respond to potentially malicious attacker </p>
@@ -98,7 +112,11 @@ function IntroTabs() {
           <p>Combining the mmWave radar with a machine learning algorithm, we trained a model that can detect the roughness of </p>
           <p>the road, which can be used to detect the road condition.</p>
           <p>Paper Reference: <a href="https://mobisys20.hotcrp.com/doc/mobisys20-paper213.pdf?cap=0213a1iBFyBH1Pys">Link</a></p>
-        </div>
+        </View>
+        <View id="Projects" className="tabnotcontent" style={{display: "none"}}>
+          <p>{data}</p>
+
+        </View>
       </Flex>
     </main>
   )

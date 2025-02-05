@@ -110,7 +110,7 @@ export default function NavBarHeader(props) {
       >
         Research
       </Button>
-      <Button
+      {/* <Button
         fontFamily="Inter"
         fontSize="16px"
         fontWeight="400"
@@ -124,10 +124,10 @@ export default function NavBarHeader(props) {
         whiteSpace="pre-wrap"
         variation="menu"
         {...getOverrideProps(overrides, "Company")}
-        onClick={() => openTab(event, 'Project')}
+        onClick={() => openTab(event, 'Projects')}
       >
-        Ideas
-      </Button>
+        Projects
+      </Button> */}
     </Flex>
     <Flex
       gap="32px"
