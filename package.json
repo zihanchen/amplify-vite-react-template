@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@aws-amplify/ui-react": "^6.1.13",
+    "@fileforge/react-print": "^0.1.150",
     "aws-amplify": "^6.4.0",
+    "axios": "^1.7.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
